@@ -1,7 +1,8 @@
-#!/usr/bin/env node
-import 'source-map-support/register';
-import * as cdk from '@aws-cdk/core';
-import { GayaBotStack } from '../lib/gaya-bot-stack';
+import * as cdk from '@aws-cdk/core'
+import { GayaBotStack } from '../lib/gaya-bot-stack'
+import { bundleLayer } from '../lib/layerSetup'
 
-const app = new cdk.App();
-new GayaBotStack(app, 'GayaBotStack');
+bundleLayer()
+
+const app = new cdk.App()
+new GayaBotStack(app, 'GayaBotStack')
